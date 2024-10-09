@@ -1,21 +1,21 @@
 package com.flipfit.business;
 
-import com.flipfit.bean.Customer;
+import com.flipfit.bean.FlipFitCustomer;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerBusiness implements CustomerInterface {
 
-    private List<Customer> customerList = new ArrayList<>();
+    private List<FlipFitCustomer> flipFitCustomerList = new ArrayList<>();
 
     @Override
     public void createCustomer(String customerId, String customerName, String customerAddress) {
-        Customer customer = new Customer();
-        customer.setCustomerId(customerId);
-        customer.setCustomerName(customerName);
-        customer.setCustomerAddress(customerAddress);
+        FlipFitCustomer flipFitCustomer = new FlipFitCustomer();
+        flipFitCustomer.setCustomerId(customerId);
+        flipFitCustomer.setCustomerName(customerName);
+        flipFitCustomer.setCustomerAddress(customerAddress);
 
-        customerList.add(customer);
+        flipFitCustomerList.add(flipFitCustomer);
         System.out.println("Customer created:");
         System.out.println("customerId: " + customerId);
         System.out.println("customerName: " + customerName);
@@ -26,15 +26,15 @@ public class CustomerBusiness implements CustomerInterface {
     @Override
     public boolean deleteCustomer(String customerId) {
         System.out.println("<-- Deleting Customer by ID: " + customerId + " -->");
-        return customerList.removeIf(customer -> customer.getCustomerId().equals(customerId));
+        return flipFitCustomerList.removeIf(flipFitCustomer -> flipFitCustomer.getCustomerId().equals(customerId));
     }
 
     @Override
     public boolean updateCustomer(String customerId, String newName, String newAddress) {
-        for (Customer customer : customerList) {
-            if (customer.getCustomerId().equals(customerId)) {
-                customer.setCustomerName(newName);
-                customer.setCustomerAddress(newAddress);
+        for (FlipFitCustomer flipFitCustomer : flipFitCustomerList) {
+            if (flipFitCustomer.getCustomerId().equals(customerId)) {
+                flipFitCustomer.setCustomerName(newName);
+                flipFitCustomer.setCustomerAddress(newAddress);
                 System.out.println("<--- Customer updated successfully --->");
                 return true;
             }
@@ -46,10 +46,10 @@ public class CustomerBusiness implements CustomerInterface {
     @Override
     public void listCustomer() {
         System.out.println("Listing customers:");
-        for (Customer customer : customerList) {
-            System.out.println("customerId: " + customer.getCustomerId());
-            System.out.println("customerName: " + customer.getCustomerName());
-            System.out.println("customerAddress: " + customer.getCustomerAddress());
+        for (FlipFitCustomer flipFitCustomer : flipFitCustomerList) {
+            System.out.println("customerId: " + flipFitCustomer.getCustomerId());
+            System.out.println("customerName: " + flipFitCustomer.getCustomerName());
+            System.out.println("customerAddress: " + flipFitCustomer.getCustomerAddress());
             System.out.println("-------------------------");
         }
     }
