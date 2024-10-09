@@ -28,5 +28,4 @@ public class Customer {
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
     }
-    private int customerID;
 }
