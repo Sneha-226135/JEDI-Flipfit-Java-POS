@@ -1,8 +1,6 @@
 package com.flipfit.business;
 
-import java.util.ArrayList;
-
-public interface GymOwnerServiceInterface {
+public interface GymOwnerInterface {
     public String getOwnerDetails();
     public boolean viewAllSlots(int id);
     public boolean isApprovedGymOwner(int id);

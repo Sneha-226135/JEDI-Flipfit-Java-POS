@@ -1,6 +1,6 @@
 package com.flipfit.business;
 
-public class GymOwnerService implements GymOwnerServiceInterface {
+public class GymOwnerService implements GymOwnerInterface {
 	public String getOwnerDetails(){
 		return "get Owner Details";
 	}
