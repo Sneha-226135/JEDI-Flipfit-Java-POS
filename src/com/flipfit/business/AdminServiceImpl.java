@@ -1,5 +1,5 @@
 package com.flipfit.business;
-import com.flipfit.bean.FlipFitAdmin;
+import com.flipfit.bean.FlipfitAdmin;
 import com.flipfit.bean.GymOwner;
 import com.flipfit.bean.GymCenter;
 import com.flipfit.dao.AdminDAO;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class AdminServiceImpl implements AdminService{
     AdminDAO adminDatabase = new AdminDAO();
-    FlipFitAdmin admin = new FlipFitAdmin(0, "", "", 0, "");
+    FlipfitAdmin admin = new FlipfitAdmin(0, "", "", 0, "");
 
     @Override
     public void createAdmin(int id, String name, String emailAddress, int phone, String password) {

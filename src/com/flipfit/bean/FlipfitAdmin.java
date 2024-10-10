@@ -1,13 +1,13 @@
 package com.flipfit.bean;
 
-public class FlipFitAdmin {
+public class FlipfitAdmin {
     private int adminId;
     private String adminName;
     private String adminEmailAddress;
     private int phone;
     private String password;
 
-    public FlipFitAdmin(int adminId, String adminName, String adminEmailAddress, int phone, String password) {
+    public FlipfitAdmin(int adminId, String adminName, String adminEmailAddress, int phone, String password) {
         this.adminId = adminId;
         this.adminName = adminName;
         this.adminEmailAddress = adminEmailAddress;
