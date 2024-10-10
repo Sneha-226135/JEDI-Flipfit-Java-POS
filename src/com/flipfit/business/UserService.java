@@ -1,10 +1,10 @@
 package com.flipfit.business;
 
-import com.flipkart.bean.Customer;
+import com.flipfit.bean.FlipFitCustomer;
 
 public class UserService {
 	
-	public String registerCustomer(Customer customerDetails){
+	public String registerCustomer(FlipFitCustomer customerDetails){
 		
 		return "register customer";
 	}
