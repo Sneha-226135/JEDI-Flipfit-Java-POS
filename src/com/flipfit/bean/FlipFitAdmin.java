@@ -7,6 +7,14 @@ public class FlipFitAdmin {
     private int phone;
     private String password;
 
+    public FlipFitAdmin(int adminId, String adminName, String adminEmailAddress, int phone, String password) {
+        this.adminId = adminId;
+        this.adminName = adminName;
+        this.adminEmailAddress = adminEmailAddress;
+        this.phone = phone;
+        this.password = password;
+    }
+
     public int getAdminId() {
         return adminId;
     }

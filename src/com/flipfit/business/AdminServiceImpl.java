@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class AdminServiceImpl implements AdminService{
     AdminDAO adminDatabase = new AdminDAO();
-    FlipFitAdmin admin = new FlipFitAdmin();
+    FlipFitAdmin admin = new FlipFitAdmin(0, "", "", 0, "");
 
     @Override
     public void createAdmin(int id, String name, String emailAddress, int phone, String password) {
