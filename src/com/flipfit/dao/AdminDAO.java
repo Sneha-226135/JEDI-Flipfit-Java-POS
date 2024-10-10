@@ -11,7 +11,8 @@ public class AdminDAO {
         admins.add(admin);
         System.out.println("Admin data successfully added");
     }
-    public ArrayList<FlipFitAdmin> getGyms() {
+    public ArrayList<FlipFitAdmin> getAdmins() {
+        System.out.println("Listing out the admins. \n");
         return admins;
     }
 }

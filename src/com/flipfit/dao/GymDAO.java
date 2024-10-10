@@ -8,10 +8,11 @@ public class GymDAO {
 
     public static void add(GymCenter gym) {
         gyms.add(gym);
-        System.out.println("Gym data successfully added");
+        System.out.println("Gym data successfully added.\n");
     }
 
     public static ArrayList<GymCenter> getGyms() {
+        System.out.println("Listing out the gyms.\n");
         return gyms;
     }
 }

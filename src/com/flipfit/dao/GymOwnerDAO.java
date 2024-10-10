@@ -13,6 +13,7 @@ public class GymOwnerDAO {
     }
 
     public static ArrayList<GymOwner> getGymOwners() {
+        System.out.println("Listing out the GymOwners.\n");
         return owners;
     }
 }
