@@ -1,57 +1,56 @@
 package com.flipfit.bean;
 
-public class FlipfitAdmin {
-    private int adminId;
-    private String adminName;
-    private String adminEmailAddress;
-    private int phone;
-    private String password;
+/**
+ * Represents an administrator in the FlipFit system.
+ */
+public class FlipFitAdmin {
+    private int adminId;  // Unique identifier for the administrator
+    private int userId;   // Identifier of the associated user
 
-    public FlipfitAdmin(int adminId, String adminName, String adminEmailAddress, int phone, String password) {
+    /**
+     * Constructs a FlipFitAdmin object with the given adminId and userId.
+     *
+     * @param adminId The unique identifier for the administrator.
+     * @param userId  The identifier of the associated user.
+     */
+    public FlipFitAdmin(int adminId, int userId) {
         this.adminId = adminId;
-        this.adminName = adminName;
-        this.adminEmailAddress = adminEmailAddress;
-        this.phone = phone;
-        this.password = password;
+        this.userId = userId;
     }
 
+    /**
+     * Retrieves the adminId of the administrator.
+     *
+     * @return The adminId of the administrator.
+     */
     public int getAdminId() {
         return adminId;
     }
 
+    /**
+     * Sets the adminId for the administrator.
+     *
+     * @param adminId The adminId to set.
+     */
     public void setAdminId(int adminId) {
         this.adminId = adminId;
     }
 
-    public String getAdminName() {
-        return adminName;
+    /**
+     * Retrieves the userId associated with the administrator.
+     *
+     * @return The userId associated with the administrator.
+     */
+    public int getUserId() {
+        return userId;
     }
 
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
-    }
-
-    public String getAdminEmailAddress() {
-        return adminEmailAddress;
-    }
-
-    public void setAdminEmailAddress(String adminEmailAddress) {
-        this.adminEmailAddress = adminEmailAddress;
-    }
-
-    public int getPhone() {
-        return phone;
-    }
-
-    public void setPhone(int phone) {
-        this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    /**
+     * Sets the userId associated with the administrator.
+     *
+     * @param userId The userId to set.
+     */
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }
