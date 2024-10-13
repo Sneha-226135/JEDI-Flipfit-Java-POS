@@ -1,18 +1,27 @@
 package com.flipfit.business;
 
+/**
+ * Interface for managing user-related operations.
+ */
+public interface FlipFitUserInterface {
 
-import com.flipfit.bean.BookedSlot;
+    /**
+     * Authenticates a user based on email, password, and role ID.
+     *
+     * @param email    The email of the user.
+     * @param password The password of the user.
+     * @param roleId   The role ID of the user.
+     * @return An integer representing the user's authentication status.
+     */
+    public int authenticateUser(String email, String password, int roleId);
 
-import java.util.List;
-
-public interface FlipfitUserInterface {
-    public void createBooking(int userId, int gymId, int transactionId, String bookingDate, String bookingTimeSlot, String bookingType, int bookingAmount);
-
-    public void bookSlots() throws Exception;
-
-    public List<BookedSlot> viewBookings(int userId) throws Exception;
-
-    public void cancelBookings(int bookingId) throws Exception;
-
-    public int makePayment(int userId, String paymentDetails, String expiryDate, String modeOfPayment) throws Exception;
+    /**
+     * Creates a new user with the specified name, password, and role ID.
+     *
+     * @param name     The name of the user.
+     * @param password The password of the user.
+     * @param roleId   The role ID of the user.
+     * @return An integer representing the success status of user creation.
+     */
+    public int createUser(String name, String password, int roleId);
 }

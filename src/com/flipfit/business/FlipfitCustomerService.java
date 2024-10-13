@@ -1,93 +1,82 @@
 package com.flipfit.business;
 
-import com.flipfit.bean.BookedSlot;
-import com.flipfit.bean.GymCenter;
+import com.flipfit.bean.*;
+import com.flipfit.dao.FlipFitCustomerDAOImpl;
+import com.flipfit.dao.FlipFitCustomerDAOInterface;
+import com.flipfit.exceptions.UserNotFoundException;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class FlipfitCustomerService implements FlipfitCustomerInterface{
+/**
+ * Service class implementing operations for FlipFit customer management.
+ */
+public class FlipFitCustomerService implements FlipFitCustomerInterface {
 
-    public void createGymOwner(int userId, String name, String phone, String address, String pan_no, String gst_no) {
-        createGymOwner(userId, name, phone, address, pan_no, gst_no);
+    FlipFitCustomerDAOInterface customerDAO = new FlipFitCustomerDAOImpl();
+
+    //    public static void main(String[] args) {
+    //        FlipFitCustomerInterface customerService = new FlipFitCustomerService();
+    //        customerService.viewSlots();
+    //    }
+
+    /**
+     * Creates a new customer with the specified details.
+     *
+     * @param userId      The ID of the user.
+     * @param name        The name of the customer.
+     * @param phoneNumber The phone number of the customer.
+     * @param address     The address of the customer.
+     */
+    public void createCustomer(int userId, String name, String phoneNumber, String address) {
+        customerDAO.createCustomer(userId, name, phoneNumber, address);
         System.out.println("Customer Details are added!");
     }
 
-    public void editProfile(int userId, String name, String phone, String address, String pan_no, String gst_no) {
-        editProfile(userId, name, phone, address, pan_no, gst_no);
-        System.out.println("edited gym owner details");
+    /**
+     * Edits the profile of an existing customer.
+     *
+     * @param userId      The ID of the user/customer to edit.
+     * @param name        The updated name of the customer.
+     * @param phoneNumber The updated phone number of the customer.
+     * @param address     The updated address of the customer.
+     * @throws UserNotFoundException If the specified user ID is not found.
+     */
+    public void editProfile(int userId, String name, String phoneNumber, String address) throws UserNotFoundException {
+        customerDAO.editProfile(userId, name, phoneNumber, address);
+        System.out.println("Customer details are updated!");
     }
 
-    public void registerGym(int userId, String name, String location) {
-        registerGym(userId, name, location);
-        System.out.println("gym registered successfully");
+    /**
+     * Retrieves a list of gyms available in the system.
+     *
+     * @return A list of FlipFitGym objects representing gyms.
+     */
+    public List<FlipFitGym> viewGyms() {
+        return customerDAO.viewGyms();
     }
 
-    public void editGym(int gymId, String gymName, String gymLocation) {
-        editGym(gymId, gymName, gymLocation);
-        System.out.println("gym " + gymId + " edited successfully");
-    }
-
-    public void removeGym(int gymId) {
-        removeGym(gymId);
-        System.out.println("gym " + gymId + " removed successfully");
-    }
-
-    public List<GymCenter> viewAllRegisteredGymCenters(int userId) {
-        return viewAllRegisteredGymCenters(userId);
-    }
-
-    public List<BookedSlot> viewAllBookings(int userId) {
-        return viewAllBookings(userId);
-    }
-
-    public List<BookedSlot> viewBookings(int gymId) {
-        return viewBookings(gymId);
-
-    }
-
-    public HashMap<String,Integer> viewAvailableSlots(int gymId, String date) {
-        try{
-            return viewSlots(gymId,date);
-        }
-        catch(Exception e){
+    /**
+     * Retrieves available slots for a specified gym on a given date.
+     *
+     * @param gymId The ID of the gym to view slots for.
+     * @param date  The date for which slots are to be viewed.
+     * @return A HashMap where keys represent slot times and values represent slot capacities.
+     */
+    public HashMap<String, Integer> viewSlots(int gymId, String date) {
+        try {
+            return customerDAO.viewSlots(gymId, date);
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
 
-    public void addSlot(int gymId, int slotId, String slotTime, int slotCapacity, int slotPrice) {
-        addSlot(gymId, slotId, slotTime, slotCapacity, slotPrice);
-        System.out.println("Added slot " + slotId + " for gym " + gymId);
-    }
-
-    public void removeSlot(int gymId, int slotId) {
-        removeSlot(gymId, slotId);
-        System.out.println("Removed slot " + slotId + " for gym " + gymId);
-    }
-
-    @Override
-    public void createCustomer(int userId, String name, String phoneNumber, String address) {
-
-    }
-
-    @Override
-    public void editProfile(int userId, String name, String phoneNumber, String address) throws Exception {
-
-    }
-
-    @Override
-    public List<GymCenter> viewGyms() {
-        return List.of();
-    }
-
-    @Override
-    public HashMap<String, Integer> viewSlots(int gymId, String date) {
-        return null;
-    }
-
-    @Override
+    /**
+     * Placeholder method for filtering slots.
+     * Actual implementation may vary based on filtering requirements.
+     */
     public void filterSlots() {
-
+        System.out.println("All slots filtered");
     }
 }

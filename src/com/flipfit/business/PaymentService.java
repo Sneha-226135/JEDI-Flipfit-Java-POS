@@ -1,7 +1,0 @@
-package com.flipfit.business;
-
-public class PaymentService {
-	public void makePayment() {
-		System.out.println("make payment");
-	}
-}
