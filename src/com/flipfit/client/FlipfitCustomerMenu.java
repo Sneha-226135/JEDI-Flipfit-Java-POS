@@ -27,7 +27,7 @@ public class FlipfitCustomerMenu {
         LocalDateTime loginTime = LocalDateTime.now();
         if(userId > 0)
         {
-            System.out.println("Logged in as Customer");
+            System.out.println("Logged in as Customer " + email );
             System.out.println("Login Time: " + loginTime);
             try {
                 displayCustomerOptions(userId);}
