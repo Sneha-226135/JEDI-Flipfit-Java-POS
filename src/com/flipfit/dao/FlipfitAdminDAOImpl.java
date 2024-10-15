@@ -37,7 +37,7 @@ public class FlipfitAdminDAOImpl implements FlipfitAdminDAOInterface{
             Class.forName("com.mysql.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             String query = "SELECT * FROM flipfitGymOwner";
 
@@ -91,7 +91,7 @@ public class FlipfitAdminDAOImpl implements FlipfitAdminDAOInterface{
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             String query = "SELECT * FROM flipfitGymOwner WHERE ownerId = ?";
             stmt = con.prepareStatement(query);
@@ -151,7 +151,7 @@ public class FlipfitAdminDAOImpl implements FlipfitAdminDAOInterface{
             Class.forName("com.mysql.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
 
             String query = "SELECT * FROM flipfitGymOwner WHERE approvalStatus = 'PENDING'";
@@ -208,7 +208,7 @@ public class FlipfitAdminDAOImpl implements FlipfitAdminDAOInterface{
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
 
             String query = "UPDATE flipfitGymOwner SET approvalStatus = 'APPROVED' WHERE ownerId = ? AND approvalStatus = 'PENDING'";
@@ -256,7 +256,7 @@ public class FlipfitAdminDAOImpl implements FlipfitAdminDAOInterface{
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
 
             String query = "DELETE FROM flipfitGymOwner WHERE ownerId = ?";
@@ -305,7 +305,7 @@ public class FlipfitAdminDAOImpl implements FlipfitAdminDAOInterface{
 
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             String query = "UPDATE flipfitGymOwner SET approvalStatus = 'CANCELED' WHERE ownerId = ? AND approvalStatus = 'PENDING'";
             stmt = con.prepareStatement(query);

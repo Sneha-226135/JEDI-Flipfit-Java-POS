@@ -1,15 +1,14 @@
 package com.flipfit.business;
 
-import com.flipfit.dao.FlipFitUserDAOImpl;
-import com.flipfit.bean.Users;
-import com.flipfit.dao.FlipFitUserDAOInterface;
+import com.flipfit.dao.FlipfitUserDAOImpl;
+import com.flipfit.dao.FlipfitUserDAOInterface;
 
 /**
  * Service class implementing FlipFitUserInterface to manage user operations.
  */
-public class FlipFitUserService implements FlipFitUserInterface {
+public class FlipfitUserService implements FlipfitUserInterface {
 
-    FlipFitUserDAOInterface userDAO = new FlipFitUserDAOImpl();
+    FlipfitUserDAOInterface userDAO = new FlipfitUserDAOImpl();
 
     /**
      * Authenticates a user based on email, password, and role ID.

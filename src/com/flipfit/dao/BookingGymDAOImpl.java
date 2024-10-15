@@ -46,7 +46,7 @@ public class BookingGymDAOImpl implements BookingGymDAOInterface {
 
             con = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             String queryOwner = "SELECT customerId FROM flipfitCustomer WHERE userId = ?";
             stmtcustomer = con.prepareStatement(queryOwner);
@@ -111,7 +111,7 @@ public class BookingGymDAOImpl implements BookingGymDAOInterface {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             // First, get the customerId from the userId
             String customerQuery = "SELECT customerId FROM flipfitCustomer WHERE userId = ?";
@@ -181,7 +181,7 @@ public class BookingGymDAOImpl implements BookingGymDAOInterface {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "mysqliswow");
 
             String querySelect = "SELECT transactionId FROM Booking WHERE bookingId = ?";
             stmtSelect = con.prepareStatement(querySelect);
@@ -251,7 +251,7 @@ public class BookingGymDAOImpl implements BookingGymDAOInterface {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             String query = "INSERT INTO Payment (paymentDetails, expiryDate, modeOfPayment) VALUES (?, ?, ?)";
             stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);

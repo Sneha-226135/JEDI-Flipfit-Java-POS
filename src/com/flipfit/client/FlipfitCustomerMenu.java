@@ -1,12 +1,9 @@
 package com.flipfit.client;
 import com.flipfit.bean.Booking;
 import com.flipfit.bean.FlipFitGym;
-import com.flipfit.business.BookingGymInterface;
-import com.flipfit.business.BookingGymService;
-import com.flipfit.business.FlipFitCustomerInterface;
-import com.flipfit.business.FlipFitCustomerService;
-import com.flipfit.business.FlipFitUserInterface;
-import com.flipfit.business.FlipFitUserService;
+import com.flipfit.business.*;
+import com.flipfit.business.FlipfitCustomerInterface;
+import com.flipfit.business.FlipfitUserService;
 import com.flipfit.exceptions.InvalidChoiceException;
 import com.flipfit.exceptions.UserNotFoundException;
 import com.flipfit.exceptions.WrongCredentialsException;
@@ -25,7 +22,7 @@ public class FlipfitCustomerMenu {
      * @throws WrongCredentialsException If the login credentials are incorrect.
      */
     public static void login(String email, String password) throws UserNotFoundException,WrongCredentialsException {
-        FlipFitUserInterface user = new FlipFitUserService();
+        FlipfitUserInterface user = new FlipfitUserService();
         int userId = user.authenticateUser(email, password, 1);
         LocalDateTime loginTime = LocalDateTime.now();
         if(userId > 0)
@@ -51,13 +48,13 @@ public class FlipfitCustomerMenu {
      * @throws InvalidChoiceException   If an invalid menu choice is made.
      */
     public static void displayCustomerOptions(int userId) throws UserNotFoundException, InvalidChoiceException {
-        FlipFitCustomerInterface customerService = new FlipFitCustomerService();
+        FlipfitCustomerInterface customerService = new FlipfitCustomerService();
         BookingGymInterface bookingService = new BookingGymService();
 
         boolean flag = true;
         do{
             System.out.println("Welcome to FlipFit Customer Page");
-            System.out.println("Customer Menu: \n1. Edit your Profile\n2. View all Gyms\n3. View available Slots\n4. Filter Slots\n5. Book your slot\n6. View your bookings\n7. Cancel your bookings\n8. Exit");
+            System.out.println("Customer Menu: \n1. Edit your Profile\n2. View all Gyms\n3. View available Slots\n 4. Book your slot\n5. View your bookings\n6. Cancel your bookings\n7. Exit");
 
             Scanner in = new Scanner(System.in);
             int i = in.nextInt();
@@ -102,11 +99,11 @@ public class FlipfitCustomerMenu {
                     }
                     System.out.println("All slots are viewed");
                     break;
+//                case 4:
+//
+//                    customerService.filterSlots();
+//                    break;
                 case 4:
-
-                    customerService.filterSlots();
-                    break;
-                case 5:
                     String temp2 = in.nextLine();
                     System.out.println("Enter your payment mode");
                     String modeOfPayment = in.nextLine();
@@ -138,7 +135,7 @@ public class FlipfitCustomerMenu {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 6:
+                case 5:
                     try{
                         List<Booking> bookings = bookingService.viewBookings(userId);
 
@@ -164,7 +161,7 @@ public class FlipfitCustomerMenu {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 7:
+                case 6:
                     System.out.println("Enter the bookingId");
                     int bookingId = in.nextInt();
                     try{
@@ -174,7 +171,7 @@ public class FlipfitCustomerMenu {
                     }
 
                     break;
-                case 8:
+                case 7:
                     System.out.println("Thank you for using FlipFit App");
                     flag = false;
                     break;

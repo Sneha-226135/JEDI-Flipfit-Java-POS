@@ -3,7 +3,7 @@ package com.flipfit.bean;
 /**
  * Represents a customer in the FlipFit system.
  */
-public class FlipFitCustomer {
+class FlipFitCustomer{
 
     private int customerId;         // Unique identifier for the customer
     private String customerName;    // Name of the customer

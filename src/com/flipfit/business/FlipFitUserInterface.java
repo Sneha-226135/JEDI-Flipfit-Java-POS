@@ -1,10 +1,6 @@
 package com.flipfit.business;
 
-/**
- * Interface for managing user-related operations.
- */
-public interface FlipFitUserInterface {
-
+public interface FlipfitUserInterface {
     /**
      * Authenticates a user based on email, password, and role ID.
      *

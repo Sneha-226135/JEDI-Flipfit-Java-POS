@@ -1,6 +1,6 @@
 package com.flipfit.dao;
 
-public interface FlipFitUserDAOInterface {
+public interface FlipfitUserDAOInterface {
     /**
      * Authenticates a user based on email, password, and role ID.
      *

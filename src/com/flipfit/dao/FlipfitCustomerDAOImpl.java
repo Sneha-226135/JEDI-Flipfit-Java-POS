@@ -1,6 +1,5 @@
 package com.flipfit.dao;
 import com.flipfit.bean.FlipFitGym;
-import com.flipfit.bean.Slot;
 import com.flipfit.exceptions.GymNotFoundException;
 import com.flipfit.exceptions.UserNotFoundException;
 import java.sql.*;
@@ -12,10 +11,10 @@ import java.util.List;
 /**
  * Implementation of the FlipFitCustomerDAOInterface that handles customer operations related to gyms and slots.
  */
-public class FlipFitCustomerDAOImpl implements FlipFitCustomerDAOInterface {
+public class FlipfitCustomerDAOImpl implements FlipfitCustomerDAOInterface {
 
     public static void main(String[] args) {
-        FlipFitCustomerDAOInterface dao = new FlipFitCustomerDAOImpl();
+        FlipfitCustomerDAOInterface dao = new FlipfitCustomerDAOImpl();
         //dao.createCustomer(1, 1, "John Doe", "1111111111", "abc", "john.doe@example.com", "somya");
 //        dao.editProfile(1, "Sarthak Doe", "1111111111", "abc");
 //        dao.viewGyms();
@@ -43,7 +42,7 @@ public class FlipFitCustomerDAOImpl implements FlipFitCustomerDAOInterface {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
             con.setAutoCommit(false);
 
             String queryCustomer = "INSERT INTO flipfitCustomer (customerName, customerPhone, customerAddress, userId) VALUES (?, ?, ?, ?)";
@@ -79,7 +78,7 @@ public class FlipFitCustomerDAOImpl implements FlipFitCustomerDAOInterface {
             Class.forName("com.mysql.jdbc.Driver");
 
             // Establish a connection to the database
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             // Update the Customer table
             PreparedStatement customerStmt = con.prepareStatement("UPDATE flipfitCustomer SET customerName=?, customerPhone=?, customerAddress=? WHERE userId=?");
@@ -119,7 +118,7 @@ public class FlipFitCustomerDAOImpl implements FlipFitCustomerDAOInterface {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             String query = "SELECT * FROM flipfitGym";
             stmt = con.prepareStatement(query);
@@ -166,7 +165,7 @@ public class FlipFitCustomerDAOImpl implements FlipFitCustomerDAOInterface {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             String querySlots = "SELECT * FROM slot WHERE gymId = ?";
             stmtSlots = con.prepareStatement(querySlots);

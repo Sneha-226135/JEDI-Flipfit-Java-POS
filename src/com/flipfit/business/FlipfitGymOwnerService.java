@@ -1,22 +1,23 @@
 package com.flipfit.business;
 import com.flipfit.bean.Booking;
 import com.flipfit.bean.FlipFitGym;
-import com.flipfit.dao.FlipFitCustomerDAOImpl;
-import com.flipfit.dao.FlipFitCustomerDAOInterface;
-import com.flipfit.dao.FlipFitGymOwnerDAOImpl;
-import com.flipfit.dao.FlipFitGymOwnerDAOInterface;
+import com.flipfit.bean.Slot;
+import com.flipfit.dao.FlipfitCustomerDAOImpl;
+import com.flipfit.dao.FlipfitCustomerDAOInterface;
+import com.flipfit.dao.FlipfitGymOwnerDAOImpl;
+import com.flipfit.dao.FlipfitGymOwnerDAOInterface;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class FlipFitGymOwnerService implements FlipFitGymOwnerInterface {
+public class FlipfitGymOwnerService implements FlipfitGymOwnerInterface {
 
-    FlipFitGymOwnerDAOInterface ownerDAO = new FlipFitGymOwnerDAOImpl();
-    FlipFitCustomerDAOInterface customerDAO = new FlipFitCustomerDAOImpl();
+    FlipfitGymOwnerDAOInterface ownerDAO = new FlipfitGymOwnerDAOImpl();
+    FlipfitCustomerDAOInterface customerDAO = new FlipfitCustomerDAOImpl();
 
     public void createGymOwner(int userId, String name, String phone, String address, String pan_no, String gst_no) {
         ownerDAO.createGymOwner(userId, name, phone, address, pan_no, gst_no);
-        System.out.println("Customer Details are added!");
+        System.out.println("Gym owner Details are added!");
     }
 
     public void editProfile(int userId, String name, String phone, String address, String pan_no, String gst_no) {
@@ -52,9 +53,9 @@ public class FlipFitGymOwnerService implements FlipFitGymOwnerInterface {
 
     }
 
-    public HashMap<String,Integer> viewAvailableSlots(int gymId,String date) {
+    public List<Slot> viewAvailableSlots(int gymId) {
         try{
-            return customerDAO.viewSlots(gymId,date);
+            return ownerDAO.viewAvailableSlots(gymId);
         }
         catch(Exception e){
             System.out.println(e.getMessage());

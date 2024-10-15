@@ -1,8 +1,8 @@
 package com.flipfit.business;
 
 import com.flipfit.bean.*;
-import com.flipfit.dao.FlipFitCustomerDAOImpl;
-import com.flipfit.dao.FlipFitCustomerDAOInterface;
+import com.flipfit.dao.FlipfitCustomerDAOImpl;
+import com.flipfit.dao.FlipfitCustomerDAOInterface;
 import com.flipfit.exceptions.UserNotFoundException;
 
 import java.util.HashMap;
@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * Service class implementing operations for FlipFit customer management.
  */
-public class FlipFitCustomerService implements FlipFitCustomerInterface {
+public class FlipfitCustomerService implements FlipfitCustomerInterface {
 
-    FlipFitCustomerDAOInterface customerDAO = new FlipFitCustomerDAOImpl();
+    FlipfitCustomerDAOInterface customerDAO = new FlipfitCustomerDAOImpl();
 
     //    public static void main(String[] args) {
     //        FlipFitCustomerInterface customerService = new FlipFitCustomerService();

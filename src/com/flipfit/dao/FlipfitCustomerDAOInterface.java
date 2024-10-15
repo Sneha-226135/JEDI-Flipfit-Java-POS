@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Interface for FlipFitCustomerDAO operations related to customer interactions with gyms and slots.
  */
-public interface FlipFitCustomerDAOInterface {
+public interface FlipfitCustomerDAOInterface {
 
     /**
      * Creates a new customer record in the database.

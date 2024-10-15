@@ -1,13 +1,12 @@
-package com.flipfit.business;
+package com.flipfit.dao;
 
 import com.flipfit.bean.Booking;
 import com.flipfit.bean.FlipFitGym;
+import com.flipfit.bean.Slot;
 
-import java.util.HashMap;
 import java.util.List;
 
-public interface FlipFitGymOwnerInterface {
-
+public interface FlipfitGymOwnerDAOInterface {
     public void createGymOwner(int userId, String name, String phone, String address, String pan_no, String gst_no);
     public void editProfile(int userId, String ownerName, String ownerPhone, String ownerAddress, String ownerGstNum, String ownerPanNum);
     public void registerGym(int userId, String name, String location);
@@ -16,7 +15,7 @@ public interface FlipFitGymOwnerInterface {
     public List<FlipFitGym> viewAllRegisteredGymCenters(int userId);
     public List<Booking> viewAllBookings(int userId);
     public List<Booking> viewBookings(int gymId);
-    public HashMap<String,Integer> viewAvailableSlots(int gymId, String date);
+    public List<Slot> viewAvailableSlots(int gymId);
     public void addSlot(int gymId, int slotId, String slotTime, int slotCapacity, int slotPrice);
-    public void removeSlot( int gymId, int slotId);
+    public void removeSlot( int gymId,int slotId);
 }

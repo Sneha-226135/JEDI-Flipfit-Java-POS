@@ -1,7 +1,6 @@
 package com.flipfit.client;
 import com.flipfit.business.*;
 import com.flipfit.exceptions.UserNotFoundException;
-import com.flipfit.exceptions.WrongCredentialsException;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -30,13 +29,13 @@ public class FlipfitApplicationMenu {
             }
         } else if(role == 2) {
             try {
-                FlipFitGymOwnerMenu.login(email, password);
+                FlipfitGymOwnerMenu.login(email, password);
             } catch (Exception e) {
                 System.out.println("Error:"+e.getMessage());
             }
         } else if(role == 3) {
             try {
-                FlipFitAdminMenu.login(email, password);}
+                FlipfitAdminMenu.login(email, password);}
             catch(Exception e) {
                 System.out.println("Error:"+e.getMessage());
             }
@@ -52,8 +51,8 @@ public class FlipfitApplicationMenu {
      */
     public static void registerCustomer() throws UserNotFoundException {
 
-        FlipFitCustomerInterface customerService = new FlipFitCustomerService();
-        FlipFitUserInterface userService = new FlipFitUserService();
+        FlipfitCustomerService customerService = new FlipfitCustomerService();
+        FlipfitUserInterface userService = new FlipfitUserService();
         Scanner in = new Scanner(System.in);
 
         System.out.println("------ Register as Customer ------ ");
@@ -95,8 +94,8 @@ public class FlipfitApplicationMenu {
      */
     public static void registerGymOwner() throws UserNotFoundException {
 
-        FlipFitGymOwnerInterface gymOwnerService = new FlipFitGymOwnerService();
-        FlipFitUserInterface userService = new FlipFitUserService();
+        FlipfitGymOwnerInterface gymOwnerService = new FlipfitGymOwnerService();
+        FlipfitUserInterface userService = new FlipfitUserService();
         Scanner in = new Scanner(System.in);
 
         System.out.println("------ Register as Gym owner ------ ");

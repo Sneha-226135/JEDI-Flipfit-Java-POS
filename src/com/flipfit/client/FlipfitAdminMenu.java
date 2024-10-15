@@ -3,10 +3,11 @@ package com.flipfit.client;
 import com.flipfit.bean.FlipFitGymOwner;
 import com.flipfit.business.FlipfitAdminInterface ;
 import com.flipfit.business.FlipfitAdminService;
+import com.flipfit.business.FlipfitUserService;
 import com.flipfit.exceptions.InvalidChoiceException;
 import com.flipfit.exceptions.WrongCredentialsException;
-import com.flipfit.business.FlipFitUserInterface;
-import com.flipfit.business.FlipFitUserService;
+import com.flipfit.business.FlipfitUserInterface;
+
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Scanner;
 /**
  * A client class that simulates an admin menu for managing gym owners in the FlipFit application.
  */
-public class FlipFitAdminMenu {
+public class FlipfitAdminMenu {
 
     /**
      * Authenticates the admin user based on the provided email, password, and role ID.
@@ -27,7 +28,7 @@ public class FlipFitAdminMenu {
 
     public static void login(String email, String password) throws WrongCredentialsException
     {
-        FlipFitUserInterface user = new FlipFitUserService();
+        FlipfitUserInterface user = new FlipfitUserService();
         LocalDateTime loginTime = LocalDateTime.now();
         if(user.authenticateUser(email, password, 3) > 0)
         {

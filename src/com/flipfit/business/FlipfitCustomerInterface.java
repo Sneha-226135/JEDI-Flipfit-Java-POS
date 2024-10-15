@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Interface defining operations for FlipFit customer management.
  */
-public interface FlipFitCustomerInterface {
+public interface FlipfitCustomerInterface {
 
     /**
      * Creates a new customer with the specified details.

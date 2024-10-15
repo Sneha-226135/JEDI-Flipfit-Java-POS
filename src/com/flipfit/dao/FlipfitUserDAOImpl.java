@@ -1,14 +1,12 @@
 package com.flipfit.dao;
 
-import com.flipfit.bean.Users;
-
 
 import java.sql.*;
 
 /**
  * Implementation of FlipFitUserDAOInterface for user authentication and creation.
  */
-public class FlipFitUserDAOImpl implements FlipFitUserDAOInterface{
+public class FlipfitUserDAOImpl implements FlipfitUserDAOInterface {
     /**
      * Authenticates a user based on email, password, and role ID.
      *
@@ -25,7 +23,7 @@ public class FlipFitUserDAOImpl implements FlipFitUserDAOInterface{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "mysqliswow");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
             String query = "SELECT userPassword, userId FROM users WHERE userEmail = ? and roleId = ?";
 
             stmt = con.prepareStatement(query);
@@ -77,7 +75,7 @@ public class FlipFitUserDAOImpl implements FlipFitUserDAOInterface{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/FlipFit", "root", "Zeuv3ied!@#%");
+                    "jdbc:mysql://localhost:3306/flipfit-schema", "root", "sneha1808");
 
             con.setAutoCommit(false);
             String queryUser = "INSERT INTO users (userEmail, userPassword, roleId) VALUES (?, ?, ?)";
